@@ -18,11 +18,6 @@ public class ArrayExercises {
                                 int[] array = new int[n];
                                 initOneD(array);
                                 // Write a statement here to call the method "BelowAboveAvg()"
-                                System.out.println("Elements of the array as follows: ");
-                                for (int i = 0; i < array.length; i++) {
-                                        System.out.print(array[i] + ", ");
-                                }
-                                System.out.println();
                                 BelowAboveAvg(array);
 
                         } else if (choice == 2) {
@@ -119,6 +114,11 @@ public class ArrayExercises {
         public static void initOneD(int[] array) {
                 for (int i = 0; i < array.length; i++) {
                         array[i] = (int) (Math.random() * 100);
+                         System.out.println("Elements of the array as follows: ");
+                                for (int j = 0; j < array.length; j++) {
+                                        System.out.print(array[j] + ", ");
+                                }
+                                System.out.println();
                 }
         }
 
