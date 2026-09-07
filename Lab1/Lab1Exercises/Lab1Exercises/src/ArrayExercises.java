@@ -27,6 +27,7 @@ public class ArrayExercises {
                                 int[] array = new int[n];
                                 initOneD(array);
                                 // Write a statement here to call the method "CountEvenOdd()"
+                                CountEvenOdd(array);
 
                         } else if (choice == 3) {
                                 // Declaring and Initializing one dimensional array
@@ -89,6 +90,8 @@ public class ArrayExercises {
                                 System.out.println(" > Invalid choice entered! Please try again.");
                                 System.out.println();
                         }
+                        System.exit(0);
+
                 } while (choice != 7);
         }
 
@@ -114,12 +117,12 @@ public class ArrayExercises {
         public static void initOneD(int[] array) {
                 for (int i = 0; i < array.length; i++) {
                         array[i] = (int) (Math.random() * 100);
-                         System.out.println("Elements of the array as follows: ");
-                                for (int j = 0; j < array.length; j++) {
-                                        System.out.print(array[j] + ", ");
-                                }
-                                System.out.println();
                 }
+                System.out.println("Elements of the array as follows: ");
+                for (int j = 0; j < array.length; j++) {
+                        System.out.print(array[j] + ", ");
+                }
+                System.out.println();
         }
 
         // Method to initialize two dimensional array with random values between 0 and
@@ -182,8 +185,6 @@ public class ArrayExercises {
                         }
                 }
                 System.out.println();
-                System.exit(0);
-
         }
 
         // Method to find how many elements are even and odd in an array
@@ -194,6 +195,35 @@ public class ArrayExercises {
         // 5. Display the total number of odd elements
         //
         public static void CountEvenOdd(int[] array) {
+                int oddCount = 0;
+                int evenCount = 0;
+                for (int i : array) {
+                        if (i % 2 == 0) {
+                                evenCount++;
+                        } else {
+                                oddCount++;
+                        }
+                }
+                System.out.println("Even elements of the array is: " + evenCount);
+                System.out.println();
+                System.out.println("Odd elements of the array is: " + oddCount);
+                System.out.println();
+
+                System.out.println("Even elements of the array as follows: ");
+                for (int i = 0; i < array.length; i++) {
+                        if (array[i] % 2 == 0) {
+                                System.out.print(array[i] + ", ");
+                        }
+                }
+                System.out.println();
+
+                System.out.println("The elements above average as follows: ");
+                for (int i = 0; i < array.length; i++) {
+                        if (array[i] % 2 == 1) {
+                                System.out.print(array[i] + ", ");
+                        }
+                }
+                System.out.println();
 
         }
 
