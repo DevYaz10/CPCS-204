@@ -1,6 +1,8 @@
 // LLdemo.java
 package LinkListUpdated;
+
 import java.util.Scanner;
+
 public class LLdemo {
 
     public static void main(String[] args) {
@@ -9,15 +11,15 @@ public class LLdemo {
 
         // Other variables
         int choice; // user choice
-        int value;  // value to insert, delete, or search for
+        int value; // value to insert, delete, or search for
 
-        // Make a new Linked List called myList i.e. creating an 
-        //object ‘myList’ of class ‘LinkedList’ in order to access 
-        //the methods of this class
+        // Make a new Linked List called myList i.e. creating an
+        // object ‘myList’ of class ‘LinkedList’ in order to access
+        // the methods of this class
         LinkedList myList = new LinkedList();
 
-        // Do/while loop showing menu, getting user choice, and 
-        //performing actions
+        // Do/while loop showing menu, getting user choice, and
+        // performing actions
         do {
             // Show menu and get user choice
             showMenu();
@@ -25,12 +27,12 @@ public class LLdemo {
 
             // INSERT new node into list
 
-
             if (choice == 1) {
                 System.out.print(">    What value do you want to insert: ");
                 value = input.nextInt();
 
-                // First, check to see if value already exists in list. If so, give error message.
+                // First, check to see if value already exists in list. If so, give error
+                // message.
                 if (myList.search(value)) {
                     System.out.println(">    " + value + " already exists in the list. Duplicates are not allowed.");
                 } else {
@@ -48,7 +50,8 @@ public class LLdemo {
                 if (myList.search(value)) {
                     myList.delete(value);
                     System.out.println(">    " + value + " was successfully deleted from the list.");
-                } // ELSE, print message stating that no delete is needed (since value is not in the list)
+                } // ELSE, print message stating that no delete is needed (since value is not in
+                  // the list)
                 else {
                     System.out.println(">    " + value + " is not in the list (no delete needed).");
                 }
@@ -91,53 +94,55 @@ public class LLdemo {
                     System.out.println();
                 }
             } else if (choice == 7) {
-                    if (myList.isEmpty()) {
-                        System.out.println(">    Error: cannot find largest node (the list is empty)");
-                        System.out.println();
-                    } else {
-                        System.out.println(">    Largest node in the linked list is "+myList.FindLargest());                        
-                        System.out.println();
+                if (myList.isEmpty()) {
+                    System.out.println(">    Error: cannot find largest node (the list is empty)");
+                    System.out.println();
+                } else {
+                    System.out.println(">    Largest node in the linked list is " + myList.FindLargest());
+                    System.out.println();
                 }
             } else if (choice == 8) {
-                    if (myList.isEmpty()) {
-                        System.out.println(">    Error: cannot find data of second node (the list is empty)");
-                        System.out.println();
-                    } else {
-                        System.out.println(">    Data of second node in the linked list is "+myList.Data2ndNode());                        
-                        System.out.println();
+                if (myList.isEmpty()) {
+                    System.out.println(">    Error: cannot find data of second node (the list is empty)");
+                    System.out.println();
+                } else {
+                    System.out.println(">    Data of second node in the linked list is " + myList.Data2ndNode());
+                    System.out.println();
                 }
             } else if (choice == 9) {
-                    if (myList.isEmpty()) {
-                        System.out.println(">    Error: cannot find data of second last node (the list is empty)");
-                        System.out.println();
-                    } else {
-                        System.out.println(">    Data of second last node in the linked list is "+myList.Data2ndLastNode());                        
-                        System.out.println();
+                if (myList.isEmpty()) {
+                    System.out.println(">    Error: cannot find data of second last node (the list is empty)");
+                    System.out.println();
+                } else {
+                    System.out
+                            .println(">    Data of second last node in the linked list is " + myList.Data2ndLastNode());
+                    System.out.println();
                 }
             } else if (choice == 10) {
-                    if (myList.isEmpty()) {
-                        System.out.println(">    Error: cannot delete last node (the list is empty)");
-                        System.out.println();
-                    } else {
-                        System.out.println(">    Deleting last node in the linked list...");   
-                        myList.DeleteLast();
-                        System.out.println();
+                if (myList.isEmpty()) {
+                    System.out.println(">    Error: cannot delete last node (the list is empty)");
+                    System.out.println();
+                } else {
+                    System.out.println(">    Deleting last node in the linked list...");
+                    myList.DeleteLast();
+                    System.out.println();
                 }
             } else if (choice == 11) {
-                    if (myList.isEmpty()) {
-                        System.out.println(">    Error: cannot change nodes (the list is empty)");
-                        System.out.println();
-                    } {
-                        System.out.println(">    Changing nodes in the linked list...");   
-                        myList.Odd2Even2Odd();
-                        System.out.println();
+                if (myList.isEmpty()) {
+                    System.out.println(">    Error: cannot change nodes (the list is empty)");
+                    System.out.println();
+                }
+                {
+                    System.out.println(">    Changing nodes in the linked list...");
+                    myList.Odd2Even2Odd();
+                    System.out.println();
                 }
             } else if (choice == 12) {
-                    System.out.println(">    Goodbye!");
-                    System.out.println();
+                System.out.println(">    Goodbye!");
+                System.out.println();
             } else {
-                    System.out.println(">    Wrong selection. Try again.");
-                    System.out.println();
+                System.out.println(">    Wrong selection. Try again.");
+                System.out.println();
             }
 
         } while (choice != 12);
@@ -164,23 +169,3 @@ public class LLdemo {
         System.out.print("> Please enter your choice: ");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
