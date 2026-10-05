@@ -1,5 +1,4 @@
 // LLdemo.java
-package LinkListUpdated;
 
 import java.util.Scanner;
 

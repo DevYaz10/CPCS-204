@@ -1,5 +1,4 @@
 // LinkedList.java *******
-package LinkListUpdated;
 
 public class LinkedList {
     // head is a reference variable (i.e. class variable) to the first node of the
@@ -340,7 +339,7 @@ public class LinkedList {
 
             LLnode helpPtr = head;
 
-            while (helpPtr.getNext() != null) {
+            while (helpPtr != null) {
                 if (helpPtr.getData() % 2 == 0) {
                     helpPtr.setData(helpPtr.getData() + 1);
                 } else {

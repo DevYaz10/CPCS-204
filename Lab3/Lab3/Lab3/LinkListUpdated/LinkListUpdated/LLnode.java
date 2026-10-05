@@ -1,5 +1,4 @@
 // LLnode.java for creating a node
-package LinkListUpdated;
 
 public class LLnode {
     private int data; // Data element of the node
