@@ -137,12 +137,36 @@ public class Lab9 {
 					q1.enqueue(1 + (int)(Math.random()*999));
 				}
 				
+				System.out.println(">    Before deleting value, elements of the queue are as follows:");
+
+				q1.PrintQueue();
+
+				System.out.println();
+
+
+
 				// Ask user to enter a value to delete from the queue
 				System.out.print(">    Please enter an INT value to delete from the queue: ");
 				int value2delete = input.nextInt();
 				
 				// ************************** YOUR CODE HERE **************************//
 				// Write the code (loops) to solve Question 1.
+				boolean deleted = false;
+				while (!q1.isEmpty()) {
+					int temp = q1.dequeue().getData();
+					if (temp == value2delete && !deleted)
+						deleted = true;		
+					else
+						q2.enqueue(temp);
+				}
+
+				while (!q2.isEmpty()) {
+					q1.enqueue(q2.dequeue().getData());
+				}
+
+				System.out.println(">    After deleting value " + value2delete + ", elements of the queue 1 are as follows:");
+				q1.PrintQueue();
+				System.out.println();
 				
 				
 				
@@ -157,8 +181,6 @@ public class Lab9 {
 			}
 			
 			// QUESTION 2:
-			// Given one queue of integers, make two more queues, one of even integers,
-			// and one of odd integers. After finishing, the first queue should be empty.
 			else if (choice == 8) {
 				// Make 1 queue:
 				QueueLL q1 = new QueueLL();
@@ -171,6 +193,24 @@ public class Lab9 {
 				
 				// ************************** YOUR CODE HERE **************************//
 				// Write the code to solve Question 2.
+				System.out.println("Elements of queue 1 are as follows:");
+				q1.PrintQueue();
+				System.out.println();
+
+				while (!q1.isEmpty()) {
+					int temp = q1.dequeue().getData();
+					if (temp % 2 == 0)
+						q2.enqueue(temp);	
+					else
+						q3.enqueue(temp);
+				}
+
+				System.out.println("Elements of queue 2 are as follows:");
+				q2.PrintQueue();
+				System.out.println();
+
+				System.out.println("Elements of queue 3 are as follows:");
+				q3.PrintQueue();
 				
 				
 				
@@ -204,6 +244,23 @@ public class Lab9 {
 				
 				// ************************** YOUR CODE HERE **************************//
 				// Write the code to solve Question 3.
+				System.out.println("Elements of queue are as follows:");
+				q1.PrintQueue();
+				System.out.println();
+
+				// Step 1: dequeue every value of the queue and push it onto the stack
+				while (!q1.isEmpty()) {
+					s1.push(q1.dequeue().getData());
+				}
+
+				// Step 2: pop every value of the stack and enqueue it back into the queue.
+				// A stack is LIFO, so the last value pushed comes out first => reversed order.
+				while (!s1.isEmpty()) {
+					q1.enqueue(s1.pop().getData());
+				}
+
+				System.out.println("Elements of queue after reversing are as follows:");
+				q1.PrintQueue();
 				
 				
 				
